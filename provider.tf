@@ -5,15 +5,17 @@ terraform {
       version = "5.48.0"
     }
   }
+
   backend "s3" {
-    bucket = "daws78s-remote-state"
-    key    = "expense-dev-k8-ws"
+    bucket = "pavandevops-remote-state"
+    key    = "expense-eksctl-dev"
     region = "us-east-1"
-    dynamodb_table = "daws78s-locking"
+    dynamodb_table = "pavandevops-locking"
   }
 }
 
-#provide authentication here
+# provide authentication here
 provider "aws" {
-  region = "us-east-1"
+    region = "us-east-1"
+  # Configuration options
 }
